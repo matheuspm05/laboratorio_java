@@ -22,17 +22,34 @@ public class Exercicio {
         System.out.print("\nEscolha a Opção: ");
 
         opcao = scan.nextInt();
-        System.out.printf("A Opção escolhida é: %d\n", opcao);
-
-        if (opcao == 0) {
-            System.out.println("Você escolheu SAIR");
-        } else if (opcao >= 1 && opcao <= 4) {
-            System.out.println("Você escolheu uma operação válida.");
-        } else {
-            System.out.println("ERROR: Opção errada!");
+        /*
+         * if (opcao == 0) {
+         * System.out.println("Você escolheu SAIR");
+         * } else if (opcao >= 1 && opcao <= 4) {
+         * System.out.println("Você escolheu uma operação válida.");
+         * } else {
+         * System.out.println("ERROR: Opção errada!");
+         * }
+         */
+        switch (opcao) {
+            case 0:
+                System.out.println("Você escolheu SAIR");
+                break;
+            case 1:
+                System.out.println("Você escolheu SOMA");
+                break;
+            case 2:
+                System.out.println("Você escolheu SUBTRAÇÃO");
+                break;
+            case 3:
+                System.out.println("Você escolheu MULTIPLICAÇÃO");
+                break;
+            case 4:
+                System.out.println("Você escolheu DIVISÃO");
+                break;
+            default:
+                System.out.println("Opção inválida");
         }
-
-       // switch 
         scan.close();
     }
 }
