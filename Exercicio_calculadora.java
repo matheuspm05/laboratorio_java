@@ -6,11 +6,12 @@
  */
 import java.util.Scanner;
 
-public class Exercicio {
+public class exercicio {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int opcao;
-
+        
+        for(opcao =1; opcao!=0; opcao=opcao){
         System.out.println("--------------------------");
         System.out.println("\tMENU");
         System.out.println("--------------------------");
@@ -19,7 +20,7 @@ public class Exercicio {
         System.out.printf("[3] MULTIPLICAÇÃO (*)\n");
         System.out.printf("[4] DIVISÃO (/)\n");
         System.out.println("[0] SAIR");
-        System.out.print("\nEscolha a Opção: ");
+        System.out.printf("\nEscolha a Opção: ");
 
         opcao = scan.nextInt();
         /*
@@ -33,23 +34,25 @@ public class Exercicio {
          */
         switch (opcao) {
             case 0:
-                System.out.println("Você escolheu SAIR");
+                System.out.println("Você escolheu: SAIR");
                 break;
             case 1:
-                System.out.println("Você escolheu SOMA");
+                System.out.println("Você escolheu: SOMA");
                 break;
             case 2:
-                System.out.println("Você escolheu SUBTRAÇÃO");
+                System.out.println("Você escolheu: SUBTRAÇÃO");
                 break;
             case 3:
-                System.out.println("Você escolheu MULTIPLICAÇÃO");
+                System.out.println("Você escolheu: MULTIPLICAÇÃO");
                 break;
             case 4:
-                System.out.println("Você escolheu DIVISÃO");
+                System.out.println("Você escolheu: DIVISÃO");
                 break;
             default:
-                System.out.println("Opção inválida");
+                System.out.println("Opção inválida! digite um numero entre (0 e 4)");
         }
-        scan.close();
+       
+        }
+         scan.close();
     }
 }
