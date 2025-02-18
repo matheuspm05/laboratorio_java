@@ -1,6 +1,23 @@
 import java.util.Scanner;
 
 public class exercicio {
+    
+    public static float soma(float num1, float num2){
+        return num1 + num2;
+    }
+    public static float subtracao(float num1, float num2){
+        return num1 - num2;
+    }
+    public static float multiplicacao(float num1, float num2){
+        return num1 * num2;
+    }
+    public static float divisao(float num1, float num2){
+        if(num2 != 0){
+        return num1 / num2;
+        }else{
+            return 0;
+        }
+    }
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int opcao;
@@ -34,17 +51,17 @@ public class exercicio {
             
                 switch (opcao) {
                     case 1:
-                        System.out.printf("RESULTADO SOMA: %.2f\n", numero1 + numero2);
+                        System.out.printf("RESULTADO SOMA: %.0f\n", soma(numero1, numero2));
                         break;
                     case 2:
-                        System.out.printf("RESULTADO SUBTRAÇÃO: %.2f\n", numero1 - numero2);
+                        System.out.printf("RESULTADO SUBTRAÇÃO: %.0f\n", subtracao(numero1, numero2));
                         break;
                     case 3:
-                        System.out.printf("RESULTADO MULTIPLICAÇÃO: %.2f\n", numero1 * numero2);
+                        System.out.printf("RESULTADO MULTIPLICAÇÃO: %.0f\n", multiplicacao(numero1, numero2));
                         break;
                     case 4:
                         if (numero2 != 0) {
-                            System.out.printf("RESULTADO DIVISÃO: %.2f\n", numero1 / numero2);
+                            System.out.printf("RESULTADO DIVISÃO: %.2f\n", divisao(numero1, numero2));
                         } else {
                             System.out.println("ERROR: Não é possível dividir por zero.");
                         }
