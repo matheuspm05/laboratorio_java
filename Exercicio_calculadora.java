@@ -1,58 +1,64 @@
-/*fazer uma calculador em java
- *usar switch case
- *
- *
- *
- */
 import java.util.Scanner;
 
 public class exercicio {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int opcao;
-        
-        for(opcao =1; opcao!=0; opcao=opcao){
-        System.out.println("--------------------------");
-        System.out.println("\tMENU");
-        System.out.println("--------------------------");
-        System.out.printf("[1] ADIÇÃO (+)\n");
-        System.out.printf("[2] SUBTRAÇÃO (-)\n");
-        System.out.printf("[3] MULTIPLICAÇÃO (*)\n");
-        System.out.printf("[4] DIVISÃO (/)\n");
-        System.out.println("[0] SAIR");
-        System.out.printf("\nEscolha a Opção: ");
+        float numero1, numero2;
+    
+        do {
+            System.out.println("--------------------------");
+            System.out.println("\tMENU");
+            System.out.println("--------------------------");
+            System.out.printf("[1] ADIÇÃO (+)\n");
+            System.out.printf("[2] SUBTRAÇÃO (-)\n");
+            System.out.printf("[3] MULTIPLICAÇÃO (*)\n");
+            System.out.printf("[4] DIVISÃO (/)\n");
+            System.out.println("[0] SAIR");
+            System.out.printf("\nEscolha a Opção: ");
+            opcao = scan.nextInt();
+            
+           
+            
+            if (opcao == 0) {
+                System.out.println("Você escolheu SAIR");
+                break;
+            } else if (opcao >= 1 && opcao <= 4) {
+            System.out.println("Você escolheu uma operação válida.");
+            
+            System.out.println("Escolha o primeiro número:");
+            numero1 = scan.nextFloat();
+            
+            System.out.println("Escolha o segundo número:");
+            numero2 = scan.nextFloat();
+            
+                switch (opcao) {
+                    case 1:
+                        System.out.printf("RESULTADO SOMA: %.2f\n", numero1 + numero2);
+                        break;
+                    case 2:
+                        System.out.printf("RESULTADO SUBTRAÇÃO: %.2f\n", numero1 - numero2);
+                        break;
+                    case 3:
+                        System.out.printf("RESULTADO MULTIPLICAÇÃO: %.2f\n", numero1 * numero2);
+                        break;
+                    case 4:
+                        if (numero2 != 0) {
+                            System.out.printf("RESULTADO DIVISÃO: %.2f\n", numero1 / numero2);
+                        } else {
+                            System.out.println("ERROR: Não é possível dividir por zero.");
+                        }
+                        break;
+                    default:
+                        System.out.println("Opção inválida.");
+                        break;
+                }
+            } else {
+                System.out.println("ERROR: Opção inválida!");
+            }
+            
+        } while(opcao != 0);
 
-        opcao = scan.nextInt();
-        /*
-         * if (opcao == 0) {
-         * System.out.println("Você escolheu SAIR");
-         * } else if (opcao >= 1 && opcao <= 4) {
-         * System.out.println("Você escolheu uma operação válida.");
-         * } else {
-         * System.out.println("ERROR: Opção errada!");
-         * }
-         */
-        switch (opcao) {
-            case 0:
-                System.out.println("Você escolheu: SAIR");
-                break;
-            case 1:
-                System.out.println("Você escolheu: SOMA");
-                break;
-            case 2:
-                System.out.println("Você escolheu: SUBTRAÇÃO");
-                break;
-            case 3:
-                System.out.println("Você escolheu: MULTIPLICAÇÃO");
-                break;
-            case 4:
-                System.out.println("Você escolheu: DIVISÃO");
-                break;
-            default:
-                System.out.println("Opção inválida! digite um numero entre (0 e 4)");
-        }
-       
-        }
-         scan.close();
+        scan.close();
     }
 }
