@@ -1,7 +1,17 @@
 import java.util.Scanner;
 
 public class exercicio {
-    
+    public static void menu(){
+        System.out.printf("=======================================\n");
+        System.out.printf("\t %s", "CALCULADORA\n");
+        System.out.printf("=======================================\n");
+        System.out.println("\t[1] Adição (+)");
+        System.out.println("\t[2] Subtração (-)");
+        System.out.println("\t[3] Multiplicação (*)");
+        System.out.println("\t[4] Divisão (/)");
+        System.out.println("\t[0] Sair");
+        System.out.printf("=======================================\n");
+    }
     public static float soma(float num1, float num2){
         return num1 + num2;
     }
@@ -21,23 +31,13 @@ public class exercicio {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int opcao;
-        float numero1, numero2;
+        float numero1 = 0, numero2 = 0;
     
         do {
-            System.out.printf("=======================================\n");
-            System.out.printf("\t %s", "CALCULADORA\n");
-            System.out.printf("=======================================\n");
-            System.out.println("\t[1] Adição (+)");
-            System.out.println("\t[2] Subtração (-)");
-            System.out.println("\t[3] Multiplicação (*)");
-            System.out.println("\t[4] Divisão (/)");
-            System.out.println("\t[0] Sair");
-            System.out.printf("=======================================\n");
+            menu();
             System.out.printf("Escolha uma opção: ");
             opcao = scan.nextInt();
-            
-           
-            
+        
             if (opcao == 0) {
                 System.out.println("Você escolheu SAIR");
                 break;
