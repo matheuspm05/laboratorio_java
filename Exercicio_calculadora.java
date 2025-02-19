@@ -24,15 +24,16 @@ public class exercicio {
         float numero1, numero2;
     
         do {
-            System.out.println("--------------------------");
-            System.out.println("\tMENU");
-            System.out.println("--------------------------");
-            System.out.printf("[1] ADIÇÃO (+)\n");
-            System.out.printf("[2] SUBTRAÇÃO (-)\n");
-            System.out.printf("[3] MULTIPLICAÇÃO (*)\n");
-            System.out.printf("[4] DIVISÃO (/)\n");
-            System.out.println("[0] SAIR");
-            System.out.printf("\nEscolha a Opção: ");
+            System.out.printf("=======================================\n");
+            System.out.printf("\t %s", "CALCULADORA\n");
+            System.out.printf("=======================================\n");
+            System.out.println("\t[1] Adição (+)");
+            System.out.println("\t[2] Subtração (-)");
+            System.out.println("\t[3] Multiplicação (*)");
+            System.out.println("\t[4] Divisão (/)");
+            System.out.println("\t[0] Sair");
+            System.out.printf("=======================================\n");
+            System.out.printf("Escolha uma opção: ");
             opcao = scan.nextInt();
             
            
