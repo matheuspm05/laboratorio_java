@@ -1,25 +1,21 @@
-
-package com.mycompany.aula25_02_25;
-
-/**
- *
- * @author alunolab08
- */
 public class Conta {
-    
+
     int numero;
     String nome;
     double limite;
-    double saldo;
-    
-    void sacar(double v){
-        saldo -= v;
-        
+    double saldo = 1000;
+
+    void sacar(double v) {
+        if (saldo >= v) {
+            saldo -= v;
+            System.out.println("SAQUE DE R$" + v + " REALIZADO COM SUCESSO.");
+        } else {
+            System.out.println("ERRO: SALDO INSUFICIENTE! VOCÊ TEM APENAS R$" + saldo);
+        }
     }
-    
-    void depositar(double v){
+
+    void depositar(double v) {
         saldo += v;
-        
+        System.out.println("DEPÓSITO DE R$" + v + " REALIZADO COM SUCESSO.");
     }
-    
 }
