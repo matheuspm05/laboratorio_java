@@ -1,11 +1,11 @@
 public class Conta {
 
     int numero;
-    String nome;
-    double limite;
+    double limite = 500;
     double saldo = 1000;
-
-    void sacar(double v) {
+    Cliente titular;
+    
+   public void sacar(double v) {
         if (saldo >= v) {
             saldo -= v;
             System.out.println("SAQUE DE R$" + v + " REALIZADO COM SUCESSO.");
@@ -14,8 +14,9 @@ public class Conta {
         }
     }
 
-    void depositar(double v) {
+    public void depositar(double v) {
         saldo += v;
         System.out.println("DEPÓSITO DE R$" + v + " REALIZADO COM SUCESSO.");
     }
+   
 }
