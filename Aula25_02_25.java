@@ -1,6 +1,7 @@
+
 import java.util.Scanner;
 
-public class Aula25_02_25 {
+public class Main {
 
     public static void valorConta(Conta c1) {
         System.out.println("------------------------------------------");
@@ -12,7 +13,8 @@ public class Aula25_02_25 {
 
         Scanner scan = new Scanner(System.in);
         Conta c1 = new Conta();
-
+        c1.titular = new Cliente();
+        
         System.out.println("------------------------------------------");
         System.out.println("CRIAR UMA CONTA");
         System.out.println("------------------------------------------");
@@ -22,7 +24,16 @@ public class Aula25_02_25 {
         scan.nextLine();
 
         System.out.print("DIGITE SEU NOME: ");
-        c1.nome = scan.nextLine();
+        c1.titular.nome = scan.nextLine();
+        
+        System.out.print("DIGITE SEU SOBRENOME: ");
+        c1.titular.sobrenome = scan.nextLine();
+        
+        System.out.print("DIGITE SEU CPF: ");
+        c1.titular.cpf = scan.nextLine();
+        
+        System.out.print("DIGITE O NOME ESPOSA/O: ");
+        c1.titular.conjunge = scan.nextLine();
 
         do {
             System.out.println("------------------------------------------");
@@ -54,7 +65,11 @@ public class Aula25_02_25 {
 
         System.out.println("------------------------------------------");
         System.out.println("NUMERO CONTA: " + c1.numero);
-        System.out.println("SEU NOME: " + c1.nome);
+        System.out.println("SEU NOME: " + c1.titular.nome);
+        System.out.println("SEU SOBRENOME: " + c1.titular.sobrenome);
+        System.out.println("SEU CPF: " + c1.titular.cpf);
+        System.out.println("ESPOSO/A: " + c1.titular.conjunge);
+        System.out.println("------------------------------------------");
         System.out.println("LIMITE DISPONÍVEL: " + c1.limite);
         System.out.println("SALDO FINAL: " + c1.saldo);
         System.out.println("------------------------------------------");
