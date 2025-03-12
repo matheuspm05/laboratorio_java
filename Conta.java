@@ -4,6 +4,10 @@ public class Conta {
     double limite = 500;
     double saldo = 1000;
     Cliente titular;
+
+    Conta() {
+        this.titular = new Cliente();
+    }
     
    public void sacar(double v) {
         if (saldo >= v) {
