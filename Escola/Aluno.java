@@ -23,48 +23,67 @@ Calcular Final – Calcula a média das notas do aluno.
 import java.time.Year;
 import java.util.Random;
 
-public class Aluno{
-    
+public class Aluno {
+
     private String matricula;
     String nome;
     String curso;
     String turma;
+    String situação;
     int periodo;
     int ano = Year.now().getValue();
     static int qntAlunos;
-    double nota1;
-    double nota2;
-    double notaFinal;
-   
-   //construtores
-    public Aluno(String nome){
+    private double nota1;
+    private double nota2;
+    private double notaFinal;
+
+    // construtores
+    public Aluno(String nome) {
         this.nome = nome.toUpperCase();
-        qntAlunos ++;
+        qntAlunos++;
+        gerarMatricula();
     }
-    //construtores
-    public Aluno(String nome, String curso, String turma, int periodo){
-        this.matricula = matricula;
+
+    // construtores
+    public Aluno(String nome, String curso, String turma, int periodo) {
         this.nome = nome;
         this.curso = curso;
         this.turma = turma;
         this.periodo = periodo;
-        qntAlunos ++;
+        qntAlunos++;
+
+        gerarMatricula();
     }
-    //get
-     public void getMatricula(){
-        System.out.println("matricula: " + this.matricula);
+
+    // get
+    public String getMatricula() {
+        return matricula;
     }
-    //set
-    public void setMatricula(){
-        this.matricula = matricula;
-    }
-    //get
-    public static int getqutAlunos(){
+
+    // get
+    public static int getqutAlunos() {
         return qntAlunos;
     }
-    
-    public void imprimirDados(){
-        System.out.println("matricula: " + this.matricula);
+
+    // get
+    public double getnotaFinal() {
+        return notaFinal;
+    }
+
+    // set
+    public void setNota1(double nota1) {
+        this.nota1 = nota1;
+    }
+
+    // set
+    public void setNota2(double nota2) {
+        this.nota2 = nota2;
+        calcularMedia();
+    }
+
+    // menu
+    public void imprimirDados() {
+        System.out.printf("\nmatricula: " + this.matricula + "\n");
         System.out.println("nome: " + this.nome);
         System.out.println("curso: " + this.curso);
         System.out.println("turma: " + this.turma);
@@ -72,16 +91,48 @@ public class Aluno{
         System.out.println("nota1: " + this.nota1);
         System.out.println("nota2: " + this.nota2);
         System.out.println("notaFinal: " + this.notaFinal);
+        System.out.println("situação: " + this.situação);
     }
-    
-    public String gerarMatricula(int ano){
-        
-        Random aleatorio = new Random(1000);
-        matricula = aleatorio.concat()
+
+    // matricula
+    public void gerarMatricula() {
+        int aleatorio;
+        String aleatorioStr;
+        String ano;
+
+        Random random = new Random();
+        aleatorio = random.nextInt(9999);
+
+        aleatorioStr = String.format("%04d", aleatorio);
+        ano = String.format("%d", this.ano);
+
+        matricula = ano.concat(aleatorioStr);
     }
-    
-    public double calcularMedia(double nota1, double nota2){
-        notaFinal = (nota1 + nota2) / 2 ;
-        return notaFinal;
+
+    public void calcularMedia() {
+        if (nota1 < 0 || nota2 < 0 || nota1 > 10 || nota2 > 10) {
+            System.out.println("ERROR:insira valores entre 0 e 10");
+            return;
+        } else {
+            notaFinal = (nota1 + nota2) / 2;
+            if (notaFinal >= 7) {
+                situação = "APROVADO";
+            } else {
+                situação = "REPROVADO";
+            }
+        }
+    }
+
+    public void passar() {
+        System.out.printf("\n" + nome + "\n");
+        if (notaFinal >= 7) {
+            System.out.println("PASSAR: " + situação);
+            periodo++;
+            if (turma != null) {
+                turma = "A"; 
+            }
+        } else {
+            System.out.println("PASSAR: " + situação);
+        }
     }
 }
