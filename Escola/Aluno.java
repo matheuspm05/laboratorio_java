@@ -24,15 +24,15 @@ import java.time.Year;
 import java.util.Random;
 
 public class Aluno {
-
+    
+    private static int qntAlunos = 0;
+    
     private String matricula;
-    String nome;
-    String curso;
-    String turma;
-    String situação;
-    int periodo;
-    int ano = Year.now().getValue();
-    static int qntAlunos;
+    private String nome;
+    private String curso;
+    private String turma;
+    private String situação;
+    private int periodo;
     private double nota1;
     private double nota2;
     private double notaFinal;
@@ -46,12 +46,11 @@ public class Aluno {
 
     // construtores
     public Aluno(String nome, String curso, String turma, int periodo) {
-        this.nome = nome;
+        this.nome = nome.toUpperCase();
         this.curso = curso;
         this.turma = turma;
         this.periodo = periodo;
         qntAlunos++;
-
         gerarMatricula();
     }
 
@@ -96,21 +95,17 @@ public class Aluno {
     
 
     // matricula
-    public void gerarMatricula() {
-        int aleatorio;
-        String aleatorioStr;
-        String ano;
-
+    private void gerarMatricula() {
+        int anoInt = Year.now().getValue();
+        int aleatorioInt;
+       
         Random random = new Random();
-        aleatorio = random.nextInt(9999);
+        aleatorioInt = random.nextInt(9999);
 
-        aleatorioStr = String.format("%04d", aleatorio);
-        ano = String.format("%d", this.ano);
-
-        matricula = ano.concat(aleatorioStr);
+        matricula = anoInt + String.format("%04d", aleatorioInt);
     }
 
-    public void calcularMedia() {
+    private void calcularMedia() {
         if (nota1 < 0 || nota2 < 0 || nota1 > 10 || nota2 > 10) {
             System.out.println("ERROR:insira valores entre 0 e 10");
             return;
@@ -127,6 +122,7 @@ public class Aluno {
     public void passar() {
         System.out.printf("\n" + nome + "\n");
         if (notaFinal >= 7) {
+            
             System.out.println("PASSAR: " + situação);
             periodo++;
             if (turma != null) {
