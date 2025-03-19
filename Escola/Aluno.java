@@ -83,16 +83,17 @@ public class Aluno {
 
     // menu
     public void imprimirDados() {
-        System.out.printf("\nmatricula: " + this.matricula + "\n");
-        System.out.println("nome: " + this.nome);
-        System.out.println("curso: " + this.curso);
-        System.out.println("turma: " + this.turma);
-        System.out.println("periodo: " + this.periodo);
-        System.out.println("nota1: " + this.nota1);
-        System.out.println("nota2: " + this.nota2);
-        System.out.println("notaFinal: " + this.notaFinal);
-        System.out.println("situação: " + this.situação);
+        System.out.println("\nMatrícula: " + this.matricula);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Curso: " + (this.curso != null ? this.curso : "Não informado"));
+        System.out.println("Turma: " + (this.turma != null ? this.turma : "Não informado"));
+        System.out.println("Período: " + (this.periodo != 0 ? this.periodo : "Não informado"));
+        System.out.println("Nota 1: " +  this.nota1);
+        System.out.println("Nota 2: " + this.nota2);
+        System.out.println("Nota Final: " + this.notaFinal);
+        System.out.println("Situação: " + (this.situação != null ? this.situação : "Não calculada"));
     }
+    
 
     // matricula
     public void gerarMatricula() {
