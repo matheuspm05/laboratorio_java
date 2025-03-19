@@ -2,10 +2,10 @@
 public class Main {
     public static void main(String[] args) {
 
-        Aluno aluno1 = new Aluno("rafael");
+        Aluno aluno1 = new Aluno("guedes");
         Aluno aluno2 = new Aluno("matheus", "CC", "CCM", 1);
 
-        aluno1.setNota1(12);
+        aluno1.setNota1(6);
         aluno1.setNota2(7);
         aluno1.passar();
 
