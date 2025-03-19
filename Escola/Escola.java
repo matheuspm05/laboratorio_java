@@ -1,35 +1,27 @@
-/******************************************************************************
-Crie uma classe aluno que possua.
 
-Matrícula (String) – gerada automaticamente, 8 digitos, iniciados com o ano+4aleatorios. Ex. 20230000.
-Nome (String) - Sempre registado com letra maiúscula.
-Curso (String)
-Turma (Char ou String)
-Periodo (int)
-Nota 1B (double)
-Nota 2B (double)
-Nota Final (double)
-Quantidade de Alunos (Int static)
+public class Escola {
+    public static void main(String[] args) {
 
-Com os métodos:
+        Aluno aluno1 = new Aluno("rafael");
+        Aluno aluno2 = new Aluno("matheus", "CC", "CCM", 1);
 
-Pelo menos 2 construtores.
-Get/Set
-Imprimir – Imprime os dados do aluno de forma formatada.
-Passar – Modifica turma e período.
-Calcular Final – Calcula a média das notas do aluno.
-*******************************************************************************/
+        aluno1.setNota1(12);
+        aluno1.setNota2(7);
+        aluno1.passar();
 
-public class Main
-{
-	public static void main(String[] args) {
-	    
-		System.out.println("Hello World");
-		Aluno aluno1 = new Aluno("matheus");
-		
-		System.out.println(aluno1.nome);
-		System.out.println(Aluno.getqutAlunos());
-		
-		
-	}
+        aluno2.setNota1(8);
+        aluno2.setNota2(8);
+        aluno2.passar();
+
+        System.out.println("-------------------------------");
+        System.out.println("\tEXIBIR ALUNOS:");
+        System.out.println("Quantidade Alunos: " + Aluno.getqutAlunos());
+
+        aluno1.imprimirDados();
+
+        aluno2.imprimirDados();
+
+        System.out.printf("-------------------------------");
+
+    }
 }
