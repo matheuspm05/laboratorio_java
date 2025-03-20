@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Banco {
+public class Main {
 
     public static void Menu(Conta c1) {
         System.out.println("------------------------------------------");
