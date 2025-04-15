@@ -1,17 +1,19 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class AgdTelefonicaNormal {
+public class AgdTelMapaPrimitivo {
 
-    private Map<String, String> colecao = new HashMap<>();;
+    private Map<String, String> colecao = new HashMap<>();
 
+    public AgdTelMapaPrimitivo(String nome, String numero) {
+        this.colecao.put(nome, numero);
+    }
 
     public void inserir(String nome, String numero) {
         colecao.put(nome, numero);
     }
 
     public String buscarNumero(String nome) {
-        
         return colecao.get(nome);
     }
 
@@ -20,7 +22,7 @@ public class AgdTelefonicaNormal {
     }
 
     public int tamanho() {
-        return colecao.size();
+        return colecao.size(); 
     }
 
     public void printar() {
