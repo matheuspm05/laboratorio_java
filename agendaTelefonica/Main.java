@@ -2,12 +2,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AgdTelefonicaNormal agenda1 = new AgdTelefonicaNormal("teste", "0000");
-        AgdTelefonicaObj agenda2 = new AgdTelefonicaObj("ts", "teste", 0000);
-        AgdTelefonicaLs agenda3 = new AgdTelefonicaLs("teste:0000");
-        AgdTelefonicaListaObj agenda4 = new AgdTelefonicaListaObj("testes", 0000);
+        AgdTelMapaPrimitivo agenda1 = new AgdTelMapaPrimitivo("teste", "0000");
+        AgdTelMapaObj agenda2 = new AgdTelMapaObj("ts", "teste", 0000);
+        AgdTelListaPrimitiva agenda3 = new AgdTelListaPrimitiva("teste:0000");
+        AgdTelListaObj agenda4 = new AgdTelListaObj("testes", 0000);
         // agenda 1
-        /* 
+        
         agenda1.inserir("matheus", "289999332");
         agenda1.inserir("João", "289998441");
         agenda1.inserir("Davi", "289992222");
@@ -42,7 +42,6 @@ public class Main {
         System.out.println("\n Tamanho da agenda: " + agenda3.tamanho());
 
         agenda3.printar();
-        */
         // agenda4 
 
         agenda4.inserir("joao", 55555);
