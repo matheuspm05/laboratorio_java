@@ -1,9 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class AgendaTelefonica {
+public class AgdTelefonicaNormal {
 
-    private Map<String, String> colecao = new HashMap<String, String>();;
+    private Map<String, String> colecao = new HashMap<>();;
 
 
     public void inserir(String nome, String numero) {
@@ -23,7 +23,9 @@ public class AgendaTelefonica {
         return colecao.size();
     }
 
-    //public void printar() {
-        // intereitor
-    //}
+    public void printar() {
+        for (Map.Entry<String, String> contato : colecao.entrySet()) {
+            System.out.println(contato.getKey() + " = " + contato.getValue());
+        }
+    }
 }
