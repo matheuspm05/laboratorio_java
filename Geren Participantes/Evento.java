@@ -19,30 +19,40 @@ public class Evento {
     }
 
     public void AddParticipantes(Participante participante) {
-        this.participantes.add(participante);
-        verificarParticipante(participante.getEmail());
+        if(verificarParticipante(participante.getEmail()) == true){
+            participantes.add(participante);
+        }
     }
 
     public void adicionarTodas(List<Participante> novosParticipantes) {
-        participantes.addAll(novosParticipantes);
+        if(verificarParticipante(List<Participante>.getEmail()) == true){
+            participantes.addAll(List<Participante>);
+        }
     }
 
-    private void verificarParticipante(String email) {
+    private boolean verificarParticipante(String email) {
         for (Participante ptc : participantes) {
             if (ptc.getEmail().equals(email)) {
                 System.out.println("JA EXISTE O PARTICIPANTE");
-                break;
+                return false;
             }
         }
+        return true;
     }
 
     public void removerParticipante(String email) {
-        for (Participante ptc : participantes) {
+        
+        Iterator<Participante> iterator = participantes.iterator();
+        
+        while (iterator.hasNext()) {
+            Participante ptc = iterator.next();
             if (ptc.getEmail().equals(email)) {
-                participantes.remove(ptc);
+                iterator.remove();  
                 System.out.println(ptc.getNome() + " REMOVIDO COM SUCESSO!");
+                break; 
             }
         }
+        System.out.println("Participante com o email " + email + " não encontrado.");
     }
 
     public void imprimirParticipantes() {
