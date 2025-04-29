@@ -22,14 +22,18 @@ public class Estudante {
     }
 
     public void imprimirCursos() {
+        System.out.println("+--------------------------------------------+");
+        System.out.println("| aluno: " + nome + "\n| Cursos inscritos\n" + "|");
         for (Curso curso : cursos) {
-            System.out.println(curso);
+            System.out.println("| - " + curso);
         }
+        System.out.println("+--------------------------------------------+");
     }
 
     @Override
     public String toString() {
-        return "nome estudante: " + nome;
+        return "Estudante: " + nome;
     }
     
+        
 }
