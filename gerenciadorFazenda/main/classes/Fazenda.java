@@ -325,7 +325,7 @@ public class Fazenda {
         Curral curralEncontrado = null;
         Animal animalEncotrado = null;
 
-        // Localizar o curral
+    
         for (Curral c : currais) {
             if (c.getId() == curralId) {
                 curralEncontrado = c;

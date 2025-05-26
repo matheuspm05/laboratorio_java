@@ -89,7 +89,11 @@ public class Main {
 
         pasto2.listarAnimais();
 
+
         boi1.aplicarRemedio(remedio1);
+        campeiro1.adicionarAnimalCuidados(boi1);
+
+        campeiro1.informacoes();
 
         
 

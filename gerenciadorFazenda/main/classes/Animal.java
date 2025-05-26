@@ -46,11 +46,11 @@ public abstract class Animal {
         this.localizacao = localizacao;
     }
 
-    public abstract void exibirInformacoes();
-
     public List<Remedio> getHistoricoRemedios() {
         return historicoRemedios;
     }
+
+    public abstract void exibirInformacoes();
 
     public void aplicarRemedio(Remedio remedio) {
         System.out.println("\nAPLICANDO REMEDIO " + remedio.getNome());
@@ -60,6 +60,7 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "\nID: " + id + "\nNOME: " + nome + "\nIDADE: " + idade + "\nPESO: " + peso + "\nLOCALIZAÇÃO: " + localizacao;
+        return "\nID: " + id + "\nNOME: " + nome + "\nIDADE: " + idade + "\nPESO: " + peso + "\nLOCALIZAÇÃO: "
+                + localizacao;
     }
 }

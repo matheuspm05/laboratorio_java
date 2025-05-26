@@ -66,6 +66,12 @@ public class Campeiro {
         System.out.println(
                 "\nID: " + id + "\nCAMPEIRO: " + nome + "\nTEMPO DE SERVIÇO: " + tempoServico + "\nSALARIO: "
                         + salario);
+
+        System.out.println("\nANIMAIS CUIDADOS:");
+        for (Animal a : animaisCuidados) {
+            System.out.println(a);
+        }
+
     }
 
     @Override
