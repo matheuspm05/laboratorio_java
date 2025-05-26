@@ -16,10 +16,10 @@ public class Vaca extends Animal {
     @Override
     public void exibirInformacoes() {
         System.out.println("\tINFORMAÇOES SOBRE A VACA");
-        System.out.println("ID: " + getId() + "\nNOME: " + getNome() + "\nIDADE: " + getIdade() +
+        System.out.println("\nID: " + getId() + "\nNOME: " + getNome() + "\nIDADE: " + getIdade() +
                 "\nPESO: " + getPeso() + "\nTOTAL DE LEITE: " + litrosLeite);
 
-        System.out.println("REMEDIOS USADOS:");
+        System.out.println("\nREMEDIOS USADOS:");
         for (Remedio remedio : getHistoricoRemedios()) {
             System.out.println(remedio.getNome());
         }

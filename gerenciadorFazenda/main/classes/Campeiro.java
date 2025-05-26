@@ -53,10 +53,10 @@ public class Campeiro {
         }
 
         if (existe) {
-            System.out.println("ANIMAL CUIDADO JA EXISTENTE.");
+            System.out.println("\nANIMAL CUIDADO JA EXISTENTE.");
         } else {
             animaisCuidados.add(animal);
-            System.out.println("ANIMAL CUIDADO ADICIONADO COM SUCESSO.");
+            System.out.println("\nANIMAL CUIDADO ADICIONADO COM SUCESSO.");
         }
 
     }

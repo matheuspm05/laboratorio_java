@@ -21,7 +21,15 @@ public class Curral extends LocalDeAnimal {
 
     @Override
     public void limpar() {
-        System.out.println("LIMPANDO O CURRAL!");
+        System.out.println("\nLIMPANDO O CURRAL!");
+    }
+
+    @Override
+    public void listarAnimais() {
+        System.out.println("\tTODOS ANIMAIS DO CURRAL " + id + ":");
+        for (Animal animal : getAnimais()) {
+            System.out.println(animal);
+        }
     }
 
     @Override

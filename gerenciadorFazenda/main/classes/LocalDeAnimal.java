@@ -13,7 +13,9 @@ public abstract class LocalDeAnimal {
 
     public abstract void limpar();
 
-    public void adicionarAnimal(Animal animal) {
+    public abstract void listarAnimais();
+
+    protected void adicionarAnimal(Animal animal) {
         int idAnimal = animal.getId();
         boolean existe = false;
 
@@ -25,14 +27,13 @@ public abstract class LocalDeAnimal {
         }
 
         if (existe) {
-            System.out.println("ANIMAL COM ID JA EXISTENTE.");
+            System.out.println("\nANIMAL COM ID JA EXISTENTE.");
         } else {
             animais.add(animal);
-            System.out.println("ANIMAL ADICIONADO COM SUCESSO.");
         }
     }
 
-    public void removerAnimal(Animal animal) {
+    protected void removerAnimal(Animal animal) {
         int idAnimal = animal.getId();
         boolean removido = false;
         Iterator<Animal> iterator = animais.iterator();
@@ -41,21 +42,14 @@ public abstract class LocalDeAnimal {
             Animal a = iterator.next();
             if (a.getId() == idAnimal) {
                 iterator.remove();
-                System.out.println("ANIMAL REMOVIDO COM SUCESSO!");
+                System.out.println("\nANIMAL REMOVIDO COM SUCESSO!");
                 removido = true;
                 break;
             }
         }
         if (!removido) {
-            System.out.println("ANIMAL NÃO ENCONTRADO.");
+            System.out.println("\nANIMAL NÃO ENCONTRADO.");
         }
     }
 
-    public void listarAnimais() {
-        System.out.println("\tTODOS ANIMAIS:");
-        for (Animal animal : animais) {
-            System.out.println(animal);
-        }
-
-    }
 }

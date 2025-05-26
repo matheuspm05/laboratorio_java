@@ -33,7 +33,7 @@ public class DonoFazenda {
 
     public void informacoes() {
         System.out.println("\tINFORMAÇOES SOBRE DONO FAZENDA");
-        System.out.println("DONO: " + nome + "\nCPF: " + cpf + "\nCONTATO: " + contato + "\nRENDA R$: " + rendaMensal);
+        System.out.println("\nDONO: " + nome + "\nCPF: " + cpf + "\nCONTATO: " + contato + "\nRENDA R$: " + rendaMensal);
     }
     
     @Override

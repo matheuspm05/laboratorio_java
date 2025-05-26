@@ -8,6 +8,8 @@ public abstract class Animal {
     private String nome;
     private String idade;
     private String peso;
+    private String localizacao;
+
     private List<Remedio> historicoRemedios;
 
     // constutor
@@ -36,6 +38,14 @@ public abstract class Animal {
         return peso;
     }
 
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
+    }
+
     public abstract void exibirInformacoes();
 
     public List<Remedio> getHistoricoRemedios() {
@@ -43,13 +53,13 @@ public abstract class Animal {
     }
 
     public void aplicarRemedio(Remedio remedio) {
-        System.out.println("aplicando remedio " + remedio.getNome());
-        System.out.println("quantidade " + remedio.getDose());
+        System.out.println("\nAPLICANDO REMEDIO " + remedio.getNome());
+        System.out.println("DOSE: " + remedio.getDose());
         historicoRemedios.add(remedio);
     }
 
     @Override
     public String toString() {
-        return "\nID: " + id + "\nNOME: " + nome + "\nIDADE: " + idade + "\nPESO: " + peso;
+        return "\nID: " + id + "\nNOME: " + nome + "\nIDADE: " + idade + "\nPESO: " + peso + "\nLOCALIZAÇÃO: " + localizacao;
     }
 }

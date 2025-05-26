@@ -28,7 +28,16 @@ public class Pasto extends LocalDeAnimal {
 
     @Override
     public void limpar() {
-        System.out.println("CORTANDO MATOS DO PASTO!");
+        System.out.println("\nCORTANDO MATOS DO PASTO!");
+    }
+
+    @Override
+    public void listarAnimais() {
+        System.out.println("\tTODOS ANIMAIS DO PASTO " + id + ":");
+        for (Animal animal : getAnimais()) {
+            System.out.println(animal);
+        }
+
     }
 
     @Override

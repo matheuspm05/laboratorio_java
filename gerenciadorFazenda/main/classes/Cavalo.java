@@ -15,10 +15,10 @@ public class Cavalo extends Animal {
     @Override
     public void exibirInformacoes() {
         System.out.println("\tINFORMAÇOES SOBRE O CAVALO");
-        System.out.println("ID: " + getId() + "\nNOME: " + getNome() + "\nIDADE: " + getIdade() +
+        System.out.println("\nID: " + getId() + "\nNOME: " + getNome() + "\nIDADE: " + getIdade() +
                 "\nPESO: " + getPeso() + "\nCOR: " + cor);
 
-        System.out.println("REMEDIOS USADOS:");
+        System.out.println("\nREMEDIOS USADOS:");
         for (Remedio remedio : getHistoricoRemedios()) {
             System.out.println(remedio.getNome());
         }
